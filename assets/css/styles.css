@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  background: #e9ecef; /* 柔和的灰色背景 */
+  margin: 0;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 3rem auto; /* 增加頂部和底部間距 */
+  padding: 0 2rem; /* 在左右兩側加入較大的空白 */
+  align-items: center; /* 垂直置中對齊 */
+}
+.grid-item {
+  margin-bottom: 1rem;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.grid-item:hover {
+  transform: scale(1.03);
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.span-all {
+  grid-column: 1 / -1;
+}
+.span-2 {
+  grid-column: span 2;
+}
