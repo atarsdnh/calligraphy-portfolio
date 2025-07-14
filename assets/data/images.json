@@ -4,7 +4,7 @@
     "full": "assets/images/full/黑歷史.webp",
     "thumb": "assets/images/thumbs/黑歷史.jpeg",
     "alt": "黑歷史",
-    "data_title": "黑歷史 - 這是一張關於我過去作品的有趣回顧，充滿了實驗精神。",
+    "data_title": "黑歷史",
     "style": "width:100%;"
   },
   {
@@ -12,7 +12,7 @@
     "full": "assets/images/full/古今多少事.webp",
     "thumb": "assets/images/thumbs/古今多少事.jpeg",
     "alt": "古今多少事",
-    "data_title": "古今多少事 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "古今多少事 - 出自楊慎 臨江仙",
     "style": "object-fit: cover;"
   },
   {
@@ -20,7 +20,7 @@
     "full": "assets/images/full/都付笑談中.webp",
     "thumb": "assets/images/thumbs/都付笑談中.jpg",
     "alt": "都付笑談中",
-    "data_title": "都付笑談中 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "都付笑談中 - 出自楊慎 臨江仙",
     "style": "object-fit: cover;"
   },
   {
@@ -28,7 +28,7 @@
     "full": "assets/images/full/一壺濁酒喜相逢.webp",
     "thumb": "assets/images/thumbs/一壺濁酒喜相逢.jpg",
     "alt": "一壺濁酒喜相逢",
-    "data_title": "一壺濁酒喜相逢 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "一壺濁酒喜相逢 - 出自楊慎 臨江仙",
     "style": "width:100%;"
   },
   {
@@ -36,15 +36,15 @@
     "full": "assets/images/full/西江月.webp",
     "thumb": "assets/images/thumbs/西江月.jpg",
     "alt": "西江月",
-    "data_title": "西江月 - 這是一張美麗的作品，展示了獨特的風格。",
-    "style": "width:100%;"
+    "data_title": "辛棄疾 西江月 - 明月別枝驚鵲 清風半夜鳴蟬 稻花香裡說豐年 聽取蛙聲一片 七八個星天外 兩三點雨山前 舊時茅店社林邊 路轉溪橋忽見",
+    "style": "width: 100%;"
   },
   {
     "class": "grid-item",
     "full": "assets/images/full/人生短短幾個秋.webp",
     "thumb": "assets/images/thumbs/人生短短幾個秋.jpg",
     "alt": "人生短短幾個秋",
-    "data_title": "人生短短幾個秋 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "人生短短幾個秋 - 出自李麗芬 愛江山更愛美人",
     "style": "width:100%;"
   },
   {
@@ -52,7 +52,7 @@
     "full": "assets/images/full/留白.webp",
     "thumb": "assets/images/thumbs/留白.jpg",
     "alt": "留白",
-    "data_title": "留白 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "留白",
     "style": "width:100%;"
   },
   {
@@ -60,7 +60,7 @@
     "full": "assets/images/full/觀自在.webp",
     "thumb": "assets/images/thumbs/觀自在.jpg",
     "alt": "觀自在",
-    "data_title": "觀自在 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "觀自在 - 出自般若波羅蜜多心經",
     "style": "width:100%;"
   },
   {
@@ -68,7 +68,7 @@
     "full": "assets/images/full/悠然.webp",
     "thumb": "assets/images/thumbs/悠然.jpg",
     "alt": "悠然",
-    "data_title": "悠然 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "悠然",
     "style": "width:100%;"
   },
   {
@@ -76,7 +76,7 @@
     "full": "assets/images/full/陋室銘.webp",
     "thumb": "assets/images/thumbs/陋室銘.jpeg",
     "alt": "陋室銘",
-    "data_title": "陋室銘 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "劉禹錫 陋室銘",
     "style": "width:100%;"
   },
   {
@@ -84,7 +84,7 @@
     "full": "assets/images/full/天淨沙.webp",
     "thumb": "assets/images/thumbs/天淨沙.jpeg",
     "alt": "天淨沙",
-    "data_title": "天淨沙 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "馬致遠 天淨沙",
     "style": "width:100%;"
   },
   {
@@ -92,7 +92,7 @@
     "full": "assets/images/full/何處不是水雲間.webp",
     "thumb": "assets/images/thumbs/何處不是水雲間.jpg",
     "alt": "何處不是水雲間",
-    "data_title": "何處不是水雲間 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "何處不是水雲間",
     "style": "width:100%;"
   },
   {
@@ -100,7 +100,7 @@
     "full": "assets/images/full/心中若有桃花源.webp",
     "thumb": "assets/images/thumbs/心中若有桃花源.jpg",
     "alt": "心中若有桃花源",
-    "data_title": "何處不是水雲間 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "心中若有桃花源",
     "style": "width:100%;"
   },
   {
@@ -108,7 +108,7 @@
     "full": "assets/images/full/定風波.webp",
     "thumb": "assets/images/thumbs/定風波.jpeg",
     "alt": "定風波",
-    "data_title": "定風波 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "蘇軾 定風波 - 莫聽穿林打葉聲，何妨吟嘯且徐行；竹杖芒鞋輕勝馬，誰怕？一蓑煙雨任平生。料峭春風吹酒醒，微冷、山頭斜照卻相迎；回首向來蕭瑟處，歸去、也無風雨也無晴。",
     "style": "width:100%; "
   },
   {
@@ -116,7 +116,7 @@
     "full": "assets/images/full/繁.webp",
     "thumb": "assets/images/thumbs/繁.jpg",
     "alt": "繁",
-    "data_title": "繁 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "繁",
     "style": "width:100%;"
   },
   {
@@ -124,7 +124,7 @@
     "full": "assets/images/full/簡.webp",
     "thumb": "assets/images/thumbs/簡.jpg",
     "alt": "簡",
-    "data_title": "簡 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "簡",
     "style": "width:100%;"
   },
   {
@@ -132,7 +132,7 @@
     "full": "assets/images/full/畫.webp",
     "thumb": "assets/images/thumbs/畫.jpeg",
     "alt": "畫",
-    "data_title": "畫 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "王維 畫",
     "style": "width:100%; "
   },
   {
@@ -140,7 +140,7 @@
     "full": "assets/images/full/春潮帶雨晚來急野渡無人舟自橫.webp",
     "thumb": "assets/images/thumbs/春潮帶雨晚來急野渡無人舟自橫.jpg",
     "alt": "春潮帶雨晚來急野渡無人舟自橫",
-    "data_title": "春潮帶雨晚來急野渡無人舟自橫 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "春潮帶雨晚來急野渡無人舟自橫 - 出自韋應物 滁州西澗",
     "style": "width:100%; "
   },
   {
@@ -148,7 +148,7 @@
     "full": "assets/images/full/心曠神怡.webp",
     "thumb": "assets/images/thumbs/心曠神怡.jpg",
     "alt": "心曠神怡",
-    "data_title": "心曠神怡 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "心曠神怡",
     "style": "width:100%; object-fit: cover;"
   },
   {
@@ -156,7 +156,7 @@
     "full": "assets/images/full/鳥鳴澗.webp",
     "thumb": "assets/images/thumbs/鳥鳴澗.jpg",
     "alt": "鳥鳴澗",
-    "data_title": "鳥鳴澗 - 這是一張美麗的作品，展示了獨特的風格。",
+    "data_title": "王維 鳥鳴澗",
     "style": "width:100%; "
   }
 ]
