@@ -42,8 +42,35 @@ body {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.4);
   color: white;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
+}
+/* Viewer Page Styles */
+.viewer-page {
+  padding: 1em;
+  text-align: center;
+}
+
+.image-container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.image-container img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.caption {
+  margin-top: 1em;
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  color: #343a40; /* 深灰色文字以提高可讀性 */
+  text-align: left;
 }

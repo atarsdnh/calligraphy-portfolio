@@ -12,7 +12,7 @@
     "full": "assets/images/full/古今多少事.webp",
     "thumb": "assets/images/thumbs/古今多少事.jpeg",
     "alt": "古今多少事",
-    "data_title": "古今多少事\n\n書體：行草\n類型：條幅\n尺寸：69 × 34 cm",
+    "data_title": "古今多少事\n—— 楊慎《臨江仙》\n\n書體：行草\n類型：條幅\n尺寸：69 × 34 cm",
     "style": "object-fit: cover;"
   },
   {
@@ -20,7 +20,7 @@
     "full": "assets/images/full/都付笑談中.webp",
     "thumb": "assets/images/thumbs/都付笑談中.jpg",
     "alt": "都付笑談中",
-    "data_title": "都付笑談中\n\n書體：草書\n類型：條幅\n尺寸：69 × 34 cm",
+    "data_title": "都付笑談中\n—— 楊慎《臨江仙》\n\n書體：草書\n類型：條幅\n尺寸：69 × 34 cm",
     "style": "object-fit: cover;"
   },
   {
@@ -28,7 +28,7 @@
     "full": "assets/images/full/一壺濁酒喜相逢.webp",
     "thumb": "assets/images/thumbs/一壺濁酒喜相逢.jpg",
     "alt": "一壺濁酒喜相逢",
-    "data_title": "一壺濁酒喜相逢\n\n書體：草書\n類型：斗方\n尺寸：69 × 69 cm",
+    "data_title": "一壺濁酒喜相逢\n—— 楊慎《臨江仙》\n\n書體：草書\n類型：斗方\n尺寸：69 × 69 cm",
     "style": "width:100%;"
   },
   {
@@ -44,7 +44,7 @@
     "full": "assets/images/full/人生短短幾個秋.webp",
     "thumb": "assets/images/thumbs/人生短短幾個秋.jpg",
     "alt": "人生短短幾個秋",
-    "data_title": "人生短短幾個秋\n\n書體：行草\n類型：條幅\n尺寸：69 × 34 cm",
+    "data_title": "人生短短幾個秋\n—— 李麗芬《愛江山更愛美人》\n\n書體：行草\n類型：條幅\n尺寸：69 × 34 cm",
     "style": "width:100%;"
   },
   {
@@ -107,8 +107,8 @@
     "class": "grid-item",
     "full": "assets/images/full/定風波.webp",
     "thumb": "assets/images/thumbs/定風波.jpeg",
-    "alt": "定風波",
-    "data_title": "蘇軾《定風波》\n\n書體：草書\n類型：條幅\n尺寸：138 × 34 cm\n釋文\n莫聽穿林打葉聲，何妨吟嘯且徐行；竹杖芒鞋輕勝馬，誰怕？一蓑煙雨任平生。料峭春風吹酒醒，微冷、山頭斜照卻相迎；回首向來蕭瑟處，歸去、也無風雨也無晴。",
+    "alt": "蘇軾《定風波》",
+    "data_title": "蘇軾《定風波》\n\n書體：草書\n類型：條幅\n尺寸：138 × 34 cm\n\n釋文\n莫聽穿林打葉聲，何妨吟嘯且徐行；竹杖芒鞋輕勝馬，誰怕？一蓑煙雨任平生。料峭春風吹酒醒，微冷、山頭斜照卻相迎；回首向來蕭瑟處，歸去、也無風雨也無晴。",
     "style": "width:100%; "
   },
   {
@@ -140,7 +140,7 @@
     "full": "assets/images/full/春潮帶雨晚來急野渡無人舟自橫.webp",
     "thumb": "assets/images/thumbs/春潮帶雨晚來急野渡無人舟自橫.jpg",
     "alt": "春潮帶雨晚來急野渡無人舟自橫",
-    "data_title": "春潮帶雨晚來急野渡無人舟自橫\n\n書體：草書\n類型：條幅\n尺寸：138 × 34 cm",
+    "data_title": "春潮帶雨晚來急野渡無人舟自橫\n—— 《韋應物滁州西澗》\n\n書體：草書\n類型：條幅\n尺寸：138 × 34 cm",
     "style": "width:100%; "
   },
   {
