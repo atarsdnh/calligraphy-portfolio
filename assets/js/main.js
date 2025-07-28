@@ -3,6 +3,32 @@ import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-l
 document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.getElementById('gallery');
 
+  const preloadFullImage = (anchor, fullUrl) => {
+    const preloadImg = new Image();
+    preloadImg.decoding = 'async';
+    preloadImg.fetchPriority = 'high';
+
+    preloadImg.onload = function () {
+      anchor.dataset.pswpWidth = preloadImg.naturalWidth;
+      anchor.dataset.pswpHeight = preloadImg.naturalHeight;
+    };
+    preloadImg.onerror = function () {
+      anchor.dataset.pswpWidth = 1600;
+      anchor.dataset.pswpHeight = 1200;
+    };
+    preloadImg.src = fullUrl;
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const anchor = entry.target;
+        preloadFullImage(anchor, anchor.dataset.pswpSrc);
+        observer.unobserve(anchor);
+      }
+    });
+  }, { rootMargin: '200px' });
+
   fetch('assets/data/images.json')
     .then(response => response.json())
     .then(images => {
@@ -26,23 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
             img.style.cssText = image.style;
           }
 
-          // ✅ 動態取得 full 圖片尺寸
-          const preloadImg = new Image();
-          preloadImg.onload = function () {
-            anchor.dataset.pswpWidth = preloadImg.naturalWidth;
-            anchor.dataset.pswpHeight = preloadImg.naturalHeight;
-            resolve(); // 圖片尺寸取得完畢
-          };
-          preloadImg.onerror = function () {
-            // 若失敗也 resolve，避免卡住
-            anchor.dataset.pswpWidth = 1600;
-            anchor.dataset.pswpHeight = 1200;
-            resolve();
-          };
-          preloadImg.src = image.full;
-
           anchor.appendChild(img);
           gallery.appendChild(anchor);
+
+          observer.observe(anchor);
+
+          resolve();
         });
       });
 
