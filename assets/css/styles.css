@@ -42,7 +42,7 @@ body {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.4);
   color: white;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
