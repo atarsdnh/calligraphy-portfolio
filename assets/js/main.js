@@ -4,72 +4,70 @@ document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.getElementById('gallery');
 
   const preloadFullImage = (anchor, fullUrl) => {
-    const preloadImg = new Image();
-    preloadImg.decoding = 'async';
-    preloadImg.fetchPriority = 'high';
+    return new Promise((resolve) => {
+      const preloadImg = new Image();
+      preloadImg.decoding = 'async';
+      preloadImg.fetchPriority = 'high';
 
-    preloadImg.onload = function () {
-      anchor.dataset.pswpWidth = preloadImg.naturalWidth;
-      anchor.dataset.pswpHeight = preloadImg.naturalHeight;
-    };
-    preloadImg.onerror = function () {
-      anchor.dataset.pswpWidth = 1600;
-      anchor.dataset.pswpHeight = 1200;
-    };
-    preloadImg.src = fullUrl;
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const anchor = entry.target;
-        preloadFullImage(anchor, anchor.dataset.pswpSrc);
-        observer.unobserve(anchor);
-      }
+      preloadImg.onload = function () {
+        anchor.dataset.pswpWidth = preloadImg.naturalWidth;
+        anchor.dataset.pswpHeight = preloadImg.naturalHeight;
+        resolve();
+      };
+      preloadImg.onerror = function () {
+        anchor.dataset.pswpWidth = 1600;
+        anchor.dataset.pswpHeight = 1200;
+        resolve(); // Resolve even on error to not block the flow
+      };
+      preloadImg.src = fullUrl;
     });
-  }, { rootMargin: '200px' });
+  };
 
   fetch('assets/data/images.json')
     .then(response => response.json())
     .then(images => {
-      const promises = images.map((image, index) => {
-        return new Promise((resolve) => {
-          const anchor = document.createElement('a');
-          anchor.classList.add('grid-item');
-          if (image.class) {
-            image.class.split(' ').forEach(cls => anchor.classList.add(cls));
-          }
-          anchor.href = image.full;
-          anchor.dataset.pswpSrc = image.full;
-          anchor.dataset.pswpTitle = image.data_title;
-          anchor.dataset.index = index;
+      const anchors = [];
+      const preloadPromises = [];
 
-          const img = document.createElement('img');
-          img.src = image.thumb;
-          img.alt = image.alt;
-          img.loading = 'lazy';
-          if (image.style) {
-            img.style.cssText = image.style;
-          }
+      // 1. 先建立所有 DOM 元素
+      images.forEach((image, index) => {
+        const anchor = document.createElement('a');
+        anchor.classList.add('grid-item');
+        if (image.class) {
+          image.class.split(' ').forEach(cls => anchor.classList.add(cls));
+        }
+        anchor.href = image.full;
+        anchor.dataset.pswpSrc = image.full;
+        anchor.dataset.pswpTitle = image.data_title;
+        anchor.dataset.index = index;
 
-          anchor.appendChild(img);
-          gallery.appendChild(anchor);
+        const img = document.createElement('img');
+        img.src = image.thumb;
+        img.alt = image.alt;
+        img.loading = 'lazy';
+        if (image.style) {
+          img.style.cssText = image.style;
+        }
 
-          observer.observe(anchor);
+        anchor.appendChild(img);
+        gallery.appendChild(anchor);
+        anchors.push(anchor);
 
-          resolve();
-        });
+        // 2. 為每一張圖片建立一個預載入尺寸的 Promise
+        preloadPromises.push(preloadFullImage(anchor, image.full));
       });
 
-      // 等待所有圖片都抓完尺寸後再初始化 lightbox
-      Promise.all(promises).then(() => {
+      // 3. 等待所有圖片尺寸都載入完成後，才初始化 lightbox
+      Promise.all(preloadPromises).then(() => {
         const lightbox = new PhotoSwipeLightbox({
           gallery: '#gallery',
           children: 'a',
           pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js'),
-          preload: [[1,2], [2,3]],
+          // preload 選項可以移除或保留，因為所有尺寸都已載入
+          // preload: [[1,2], [2,3]],
           preloaderDelay: 200,
           initialZoomLevel: 'fit',
+          history: false,
         });
 
         lightbox.on('uiRegister', function() {
@@ -92,7 +90,43 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         });
 
+        // 當燈箱中的圖片更換時，更新 URL hash
+        lightbox.on('change', () => {
+          const { pswp } = lightbox;
+          if (pswp && pswp.currSlide) {
+            const currSlideElement = pswp.currSlide.data.element;
+            if (currSlideElement) {
+              const alt = currSlideElement.querySelector('img').alt;
+              const newHash = '#' + encodeURIComponent(alt);
+              if (history.state?.pswp !== newHash) {
+                history.replaceState({ pswp: newHash }, '', newHash);
+              }
+            }
+          }
+        });
+
+        // 當燈箱關閉時，清除 URL hash
+        lightbox.on('close', () => {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        });
+
+        // before-change 事件監聽器已不再需要，因為所有尺寸都已預載
+        // lightbox.on('before-change', ...);
+
         lightbox.init();
+
+        // 處理從 URL hash 來的直接連結
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          const decodedAlt = decodeURIComponent(hash);
+          const imageIndex = images.findIndex(img => img.alt === decodedAlt);
+          if (imageIndex > -1) {
+            // 因為所有尺寸都已載入，可以直接開啟，但保留延遲以防萬一
+            setTimeout(() => {
+              lightbox.loadAndOpen(imageIndex);
+            }, 10);
+          }
+        }
       });
     })
     .catch(error => console.error('Error loading images:', error));
