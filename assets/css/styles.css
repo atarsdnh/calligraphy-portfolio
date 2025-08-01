@@ -3,6 +3,7 @@ body {
   background: #e9ecef; /* 柔和的灰色背景 */
   margin: 0;
   overflow-x: hidden;
+  overscroll-behavior-y: contain;
 }
 .gallery {
   display: grid;
@@ -59,6 +60,8 @@ body {
   -webkit-overflow-scrolling: touch; /* iOS 平滑滾動 */
   scrollbar-width: thin; /* Firefox scrollbar 細一點 */
   position: relative;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
 }
 
 /* 滾動條樣式，僅部分瀏覽器支援 */
