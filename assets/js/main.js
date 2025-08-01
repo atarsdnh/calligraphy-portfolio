@@ -1,6 +1,39 @@
 import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+  // 自動將 .panorama-scroll-container 捲動到最右側
+  const panoContainer = document.querySelector('.panorama-scroll-container');
+  if (panoContainer) {
+    panoContainer.scrollLeft = panoContainer.scrollWidth;
+
+    // Show scroll hint when user scrolls left for the first time
+    const panoramaContainer = document.getElementById('panoramaContainer');
+    const scrollHint = document.getElementById('scrollHint');
+    let hintShown = false;
+    let hintVisible = false;
+    if (panoramaContainer && scrollHint) {
+      panoramaContainer.addEventListener('scroll', function () {
+        if (
+          !hintShown &&
+          panoramaContainer.scrollLeft >= panoramaContainer.scrollWidth - panoramaContainer.clientWidth - 5
+        ) {
+          hintShown = true;
+          scrollHint.classList.add('show');
+          hintVisible = true;
+        }
+      });
+      panoramaContainer.addEventListener('scroll', function () {
+        if (
+          hintVisible &&
+          panoramaContainer.scrollLeft < panoramaContainer.scrollWidth - panoramaContainer.clientWidth - 5
+        ) {
+          scrollHint.classList.remove('show');
+          hintVisible = false;
+        }
+      });
+    }
+  }
+  // ===== Panorama Swiper Initialization 已移除 =====
   const gallery = document.getElementById('gallery');
 
   const preloadFullImage = (anchor, fullUrl) => {
